@@ -14,7 +14,7 @@ tools:
         data and formats such as SAM/BAM/CRAM and VCF.
       homepage: https://broadinstitute.github.io/picard/
       documentation: https://broadinstitute.github.io/picard/
-      licence: ['MIT']
+      licence: ["MIT"]
 input:
   - meta:
       type: map
@@ -24,7 +24,25 @@ input:
   - bam:
       type: file
       description: BAM file
-      pattern: "*.{bam}"
+      pattern: "*.{bam,cram,sam}"
+  - meta2:
+      type: map
+      description: |
+        Groovy Map containing reference information
+        e.g. [ id:'genome' ]
+  - fasta:
+      type: file
+      description: Reference genome fasta file
+      pattern: "*.{fasta,fa}"
+  - meta3:
+      type: map
+      description: |
+        Groovy Map containing reference information
+        e.g. [ id:'genome' ]
+  - fai:
+      type: file
+      description: Reference genome fasta index
+      pattern: "*.{fai}"
 output:
   - meta:
       type: map
@@ -50,3 +68,8 @@ output:
 authors:
   - "@drpatelh"
   - "@projectoriented"
+  - "@ramprasadn"
+maintainers:
+  - "@drpatelh"
+  - "@projectoriented"
+  - "@ramprasadn"

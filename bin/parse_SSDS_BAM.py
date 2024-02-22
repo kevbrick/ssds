@@ -225,15 +225,15 @@ for read in samfile:
             report_details["totinfo"]["filtered_fragments"] += 1
             continue
 
-        if abs(read1.template_length) < 35 or abs(read2.template_length) < 35:
-            report_details["totinfo"]["fragment_too_short"] += 1
-            report_details["totinfo"]["filtered_fragments"] += 1
-            continue
+        # if abs(read1.template_length) < 35 or abs(read2.template_length) < 35:
+        #     report_details["totinfo"]["fragment_too_short"] += 1
+        #     report_details["totinfo"]["filtered_fragments"] += 1
+        #     continue
 
-        if abs(read1.reference_length) < 35 or abs(read2.reference_length) < 35:
-            report_details["totinfo"]["alignment_too_short"] += 1
-            report_details["totinfo"]["filtered_fragments"] += 1
-            continue
+        # if abs(read1.reference_length) < 35 or abs(read2.reference_length) < 35:
+        #     report_details["totinfo"]["alignment_too_short"] += 1
+        #     report_details["totinfo"]["filtered_fragments"] += 1
+        #     continue
 
         if read1.is_supplementary or read2.is_supplementary:
             report_details["totinfo"]["supplementary_alignment"] += 1

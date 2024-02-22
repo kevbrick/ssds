@@ -9,6 +9,18 @@ on:
     types: [published]
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    # Add a step to install Nextflow
+    - name: Install Nextflow
+      run: |
+        wget -qO- https://get.nextflow.io | bash
+        ./nextflow self-update -y [minimum_required_version]
+        ./nextflow -version
   test:
     name: Run workflow tests
     # Only run on push if this is the nf-core dev branch (merged PRs)
