@@ -2,57 +2,98 @@
     "name": "nf-core/ssds",
     "homePage": "https://github.com/nf-core/ssds",
     "repos": {
-        "nf-core/modules": {
-            "bedtools/bamtobed": {
-                "git_sha": "9d0cad583b9a71a6509b754fdf589cbfbed08961"
+        "https://github.com/nf-core/modules.git": {
+            "modules": {
+                "nf-core": {
+                    "bedtools/bamtobed": {
+                        "branch": "master",
+                        "git_sha": "1d1cb7bfef6cf67fbc7faafa6992ad8bdc3045b3",
+                        "installed_by": ["modules"]
+                    },
+                    "bedtools/makewindows": {
+                        "branch": "master",
+                        "git_sha": "90aef30f432332bdf0ce9f4b9004aa5d5c4960bb",
+                        "installed_by": ["modules"]
+                    },
+                    "bedtools/sort": {
+                        "branch": "master",
+                        "git_sha": "90aef30f432332bdf0ce9f4b9004aa5d5c4960bb",
+                        "installed_by": ["modules"]
+                    },
+                    "bwa/index": {
+                        "branch": "master",
+                        "git_sha": "90aef30f432332bdf0ce9f4b9004aa5d5c4960bb",
+                        "installed_by": ["modules"]
+                    },
+                    "bwa/mem": {
+                        "branch": "master",
+                        "git_sha": "4f5274c3de0c9521f5033893ff61057a74c45ba9",
+                        "installed_by": ["modules"]
+                    },
+                    "custom/dumpsoftwareversions": {
+                        "branch": "master",
+                        "git_sha": "82501fe6d0d12614db67751d30af98d16e63dc59",
+                        "installed_by": ["modules"]
+                    },
+                    "deeptools/plotfingerprint": {
+                        "branch": "master",
+                        "git_sha": "e745e167c1020928ef20ea1397b6b4d230681b4d",
+                        "installed_by": ["modules"]
+                    },
+                    "fastqc": {
+                        "branch": "master",
+                        "git_sha": "49b18b1639f4f7104187058866a8fab33332bdfe",
+                        "installed_by": ["modules"]
+                    },
+                    "multiqc": {
+                        "branch": "master",
+                        "git_sha": "90aef30f432332bdf0ce9f4b9004aa5d5c4960bb",
+                        "installed_by": ["modules"]
+                    },
+                    "picard/collectmultiplemetrics": {
+                        "branch": "master",
+                        "git_sha": "682f789f93070bd047868300dd018faf3d434e7c",
+                        "installed_by": ["modules"]
+                    },
+                    "picard/markduplicates": {
+                        "branch": "master",
+                        "git_sha": "682f789f93070bd047868300dd018faf3d434e7c",
+                        "installed_by": ["modules"]
+                    },
+                    "picard/sortsam": {
+                        "branch": "master",
+                        "git_sha": "682f789f93070bd047868300dd018faf3d434e7c",
+                        "installed_by": ["modules"]
+                    },
+                    "samtools/idxstats": {
+                        "branch": "master",
+                        "git_sha": "f0a86eaf5bf6ca73c5571193edd00c25bfa308f5",
+                        "installed_by": ["modules"]
+                    },
+                    "samtools/index": {
+                        "branch": "master",
+                        "git_sha": "897c33d5da084b61109500ee44c01da2d3e4e773",
+                        "installed_by": ["modules"]
+                    },
+                    "samtools/view": {
+                        "branch": "master",
+                        "git_sha": "83b05a8dc05b9dd2f1979d1a9f08411fb1a82b11",
+                        "installed_by": ["modules"]
+                    },
+                    "trimgalore": {
+                        "branch": "master",
+                        "git_sha": "bfbdc4f79bb26bc698d30b74abd081db8af77f4d",
+                        "installed_by": ["modules"]
+                    },
+                    "ucsc/bedgraphtobigwig": {
+                        "branch": "master",
+                        "git_sha": "90aef30f432332bdf0ce9f4b9004aa5d5c4960bb",
+                        "installed_by": ["modules"]
+                    }
+                }
             },
-            "bedtools/makewindows": {
-                "git_sha": "9d0cad583b9a71a6509b754fdf589cbfbed08961"
-            },
-            "bedtools/sort": {
-                "git_sha": "9d0cad583b9a71a6509b754fdf589cbfbed08961"
-            },
-            "bwa/index": {
-                "git_sha": "20d8250d9f39ddb05dfb437603aaf99b5c0b2b41"
-            },
-            "bwa/mem": {
-                "git_sha": "1765225042d40cf01eb9469ea95bf6d0f6810937"
-            },
-            "custom/dumpsoftwareversions": {
-                "git_sha": "20d8250d9f39ddb05dfb437603aaf99b5c0b2b41"
-            },
-            "deeptools/plotfingerprint": {
-                "git_sha": "9d0cad583b9a71a6509b754fdf589cbfbed08961"
-            },
-            "fastqc": {
-                "git_sha": "9d0cad583b9a71a6509b754fdf589cbfbed08961"
-            },
-            "multiqc": {
-                "git_sha": "20d8250d9f39ddb05dfb437603aaf99b5c0b2b41"
-            },
-            "picard/collectmultiplemetrics": {
-                "git_sha": "9d0cad583b9a71a6509b754fdf589cbfbed08961"
-            },
-            "picard/markduplicates": {
-                "git_sha": "9d0cad583b9a71a6509b754fdf589cbfbed08961"
-            },
-            "picard/sortsam": {
-                "git_sha": "9d0cad583b9a71a6509b754fdf589cbfbed08961"
-            },
-            "samtools/idxstats": {
-                "git_sha": "20d8250d9f39ddb05dfb437603aaf99b5c0b2b41"
-            },
-            "samtools/index": {
-                "git_sha": "0fafaeebf52cc5ab554b83297ed02a48d852a848"
-            },
-            "samtools/view": {
-                "git_sha": "9d0cad583b9a71a6509b754fdf589cbfbed08961"
-            },
-            "trimgalore": {
-                "git_sha": "9d0cad583b9a71a6509b754fdf589cbfbed08961"
-            },
-            "ucsc/bedgraphtobigwig": {
-                "git_sha": "9d0cad583b9a71a6509b754fdf589cbfbed08961"
+            "subworkflows": {
+                "nf-core": {}
             }
         }
     }
