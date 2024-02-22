@@ -9,14 +9,15 @@ Please use the pre-filled template to save time.
 However, don't be put off by this template - other more general issues and suggestions are welcome!
 Contributions to the code are even more welcome ;)
 
-> If you need help using or modifying nf-core/ssds then the best place to ask is on the nf-core Slack [#ssds](https://nfcore.slack.com/channels/ssds) channel ([join our Slack here](https://nf-co.re/join/slack)).
+:::info
+If you need help using or modifying nf-core/ssds then the best place to ask is on the nf-core Slack [#ssds](https://nfcore.slack.com/channels/ssds) channel ([join our Slack here](https://nf-co.re/join/slack)).
+:::
 
 ## Contribution workflow
 
 If you'd like to write some code for nf-core/ssds, the standard workflow is as follows:
 
-1. Check that there isn't already an issue about your idea in the [nf-core/ssds issues](https://github.com/nf-core/ssds/issues) to avoid duplicating work
-    * If there isn't one already, please create one so that others know you're working on this
+1. Check that there isn't already an issue about your idea in the [nf-core/ssds issues](https://github.com/nf-core/ssds/issues) to avoid duplicating work. If there isn't one already, please create one so that others know you're working on this
 2. [Fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the [nf-core/ssds repository](https://github.com/nf-core/ssds) to your GitHub account
 3. Make the necessary changes / additions within your forked repository following [Pipeline conventions](#pipeline-contribution-conventions)
 4. Use `nf-core schema build` and add any new parameters to the pipeline JSON schema (requires [nf-core tools](https://github.com/nf-core/tools) >= 1.10).
@@ -25,6 +26,9 @@ If you'd like to write some code for nf-core/ssds, the standard workflow is as f
 If you're not used to this workflow with git, you can start with some [docs from GitHub](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests) or even their [excellent `git` resources](https://try.github.io/).
 
 ## Tests
+
+You can optionally test your changes by running the pipeline locally. Then it is recommended to use the `debug` profile to
+receive warnings about process selectors and other debug info. Example: `nextflow run . -profile debug,test,docker --outdir <OUTDIR>`.
 
 When you create a pull request with changes, [GitHub Actions](https://github.com/features/actions) will run automatic tests.
 Typically, pull-requests are only fully reviewed when these tests are passing, though of course we can help out before then.
@@ -49,9 +53,9 @@ These tests are run both with the latest available version of `Nextflow` and als
 
 :warning: Only in the unlikely and regretful event of a release happening with a bug.
 
-* On your own fork, make a new branch `patch` based on `upstream/master`.
-* Fix the bug, and bump version (X.Y.Z+1).
-* A PR should be made on `master` from patch to directly this particular bug.
+- On your own fork, make a new branch `patch` based on `upstream/master`.
+- Fix the bug, and bump version (X.Y.Z+1).
+- A PR should be made on `master` from patch to directly this particular bug.
 
 ## Getting help
 
@@ -73,7 +77,7 @@ If you wish to contribute a new step, please use the following coding standards:
 6. Add sanity checks and validation for all relevant parameters.
 7. Perform local tests to validate that the new code works as expected.
 8. If applicable, add a new test command in `.github/workflow/ci.yml`.
-9. Update MultiQC config `assets/multiqc_config.yaml` so relevant suffixes, file name clean up and module plots are in the appropriate order. If applicable, add a [MultiQC](https://https://multiqc.info/) module.
+9. Update MultiQC config `assets/multiqc_config.yml` so relevant suffixes, file name clean up and module plots are in the appropriate order. If applicable, add a [MultiQC](https://https://multiqc.info/) module.
 10. Add a description of the output files and if relevant any appropriate images from the MultiQC report to `docs/output.md`.
 
 ### Default values
@@ -92,8 +96,8 @@ The process resources can be passed on to the tool dynamically within the proces
 
 Please use the following naming schemes, to make it easy to understand what is going where.
 
-* initial process channel: `ch_output_from_<process>`
-* intermediate and terminal channels: `ch_<previousprocess>_for_<nextprocess>`
+- initial process channel: `ch_output_from_<process>`
+- intermediate and terminal channels: `ch_<previousprocess>_for_<nextprocess>`
 
 ### Nextflow version bumping
 
@@ -102,3 +106,18 @@ If you are using a new feature from core Nextflow, you may bump the minimum requ
 ### Images and figures
 
 For overview images and other documents we follow the nf-core [style guidelines and examples](https://nf-co.re/developers/design_guidelines).
+
+## GitHub Codespaces
+
+This repo includes a devcontainer configuration which will create a GitHub Codespaces for Nextflow development! This is an online developer environment that runs in your browser, complete with VSCode and a terminal.
+
+To get started:
+
+- Open the repo in [Codespaces](https://github.com/nf-core/ssds/codespaces)
+- Tools installed
+  - nf-core
+  - Nextflow
+
+Devcontainer specs:
+
+- [DevContainer config](.devcontainer/devcontainer.json)
